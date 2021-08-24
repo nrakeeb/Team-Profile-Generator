@@ -4,6 +4,11 @@ const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const pageGenerator = require('./src/pageGenerator.js')
+
+var managerArray = []
+var engineerArray = []
+var internArray = []
 
 const questions = [
     // Employee role
@@ -65,5 +70,95 @@ const questions = [
             }
         }
     },
+]
+
+const managerQuestions = [
+    {
+        type: 'input',
+        message: 'What is your office number? ',
+        name: 'officeNumber',
+        validate: officeInput => {
+            if (officeInput) {
+                return true;
+            } else {
+                console.log('Please enter an office number to continue')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+        message: 'Would you like to add another employee? ',
+        name: 'addMoreMembers',
+        choices: ['Yes', 'No'],
+        validate: roleInput => {
+            if (roleInput) {
+                return true;
+            } else {
+                console.log('Please state if you would like to add more employees.')
+                return false;
+            }
+        }
+    }
+]
+
+const engineerQuestions = [
+    {
+        type: 'input',
+        message: 'What is your github username? ',
+        name: 'github',
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please enter a github username to continue')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+        message: 'Would you like to add another employee? ',
+        name: 'addMoreMembers',
+        choices: ['Yes', 'No'],
+        validate: roleInput => {
+            if (roleInput) {
+                return true;
+            } else {
+                console.log('Please state if you would like to add more employees.')
+                return false;
+            }
+        }
+    }
+]
+
+const internQuestions = [
+    {
+        type: 'input',
+        message: 'What is your school? ',
+        name: 'school',
+        validate: schoolInput => {
+            if (schoolInput) {
+                return true;
+            } else {
+                console.log('Please enter a school to continue')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+        message: 'Would you like to add another employee? ',
+        name: 'addMoreMembers',
+        choices: ['Yes', 'No'],
+        validate: roleInput => {
+            if (roleInput) {
+                return true;
+            } else {
+                console.log('Please state if you would like to add more employees.')
+                return false;
+            }
+        }
+    }
 ]
 

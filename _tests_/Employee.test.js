@@ -3,7 +3,7 @@ const Employee = require("../lib/Employee")
 const employee = new Employee("Nouha", 1, "Nouha@hotmail.com")
 
 describe("Employee", () => {
-    it("should have all correct values when ", () => {
+    it("should have all correct values when new object is instantiated", () => {
         expect(employee.name).toBe("Nouha");
         expect(employee.id).toBe(1);
         expect(employee.email).toBe("Nouha@hotmail.com");

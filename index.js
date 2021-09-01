@@ -162,3 +162,55 @@ const internQuestions = [
     }
 ]
 
+function init() {
+    inquirer.prompt(questions)
+        .then(function (userInput) {
+            if (userInput.role == questions[0].choices[0]) {
+                var employee = new Manager(userInput.name, userInput.id, userInput.email)
+                inquirer.prompt(managerQuestions)
+                    .then(function (userInput) {
+                        employee.setOfficeNumber(userInput.officeNumber)
+                        managerArray.push(employee)
+                        if (userInput.addMoreMembers == "Yes") {
+                            init()
+                        }
+                        if (userInput.addMoreMembers == "No") {
+                            generateMarkup();
+                        }
+                    })
+            } else if (userInput.role == questions[0].choices[1]) {
+                var employee = new Engineer(userInput.name, userInput.id, userInput.email)
+                inquirer.prompt(engineerQuestions)
+                    .then(function (userInput) {
+                        employee.setGithub(userInput.github)
+                        engineerArray.push(employee)
+                        if (userInput.addMoreMembers == "Yes") {
+                            init();
+                        }
+                        if (userInput.addMoreMembers == "No") {
+                            generateMarkup();
+                        }
+                    })
+            } else {
+                var employee = new Intern(userInput.name, userInput.id, userInput.email)
+                inquirer.prompt(internQuestions)
+                    .then(function (userInput) {
+                        employee.setSchool(userInput.school)
+                        internArray.push(employee)
+                        if (userInput.addMoreMembers == "Yes") {
+                            init();
+                        }
+                        if (userInput.addMoreMembers == "No") {
+                            generateMarkup();
+                        }
+                    })
+            }
+        });
+};
+
+function generateMarkup() {
+    const errorFunction = (e) => e ? console.error(e) : console.log('Page generated!');
+    fs.writeFile("./dist/index.html", pageGenerator.generate(managerArray, engineerArray, internArray), errorFunction);
+}
+
+init();

@@ -28,13 +28,11 @@ function generateManagers(managerArray) {
     managerArray.forEach(element => {
         markup += `
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                Manager: ${element.name}
-            </div>
+            <div class="card-header">Manager: ${element.name}</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">${element.id}</li>
-                <li class="list-group-item">${element.email}</li>
-                <li class="list-group-item">${element.officeNumber}</li>
+                <li class="list-group-item">ID: ${element.id}</li>
+                <li class="list-group-item">Email: ${element.email}</li>
+                <li class="list-group-item">Office number:${element.officeNumber}</li>
             </ul>
         </div>
         `
@@ -47,13 +45,11 @@ function generateEngineers(engineerArray) {
     engineerArray.forEach(element => {
         markup += `
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                Manager: ${element.name}
-            </div>
+            <div class="card-header">Engineer: ${element.name}</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">${element.id}</li>
-                <li class="list-group-item">${element.email}</li>
-                <li class="list-group-item">${element.github}</li>
+                <li class="list-group-item">ID: ${element.id}</li>
+                <li class="list-group-item">Email: ${element.email}</li>
+                <li class="list-group-item">Github: ${element.github}</li>
             </ul>
         </div>
         `
@@ -66,13 +62,11 @@ function generateInterns(internArray) {
     internArray.forEach(element => {
         markup += `
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                Manager: ${element.name}
-            </div>
+            <div class="card-header">Intern: ${element.name}</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">${element.id}</li>
-                <li class="list-group-item">${element.email}</li>
-                <li class="list-group-item">${element.school}</li>
+                <li class="list-group-item">ID: ${element.id}</li>
+                <li class="list-group-item">Email: ${element.email}</li>
+                <li class="list-group-item">School: ${element.school}</li>
             </ul>
         </div>
         `

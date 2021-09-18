@@ -31,7 +31,11 @@ https://www.youtube.com/watch?v=MQlNCcj2yn0
 
 ## Screenshots
 
-- To be added
+![prompts](https://user-images.githubusercontent.com/82734765/133910836-e14a8473-c166-46f2-85ee-8f9af0b5a032.JPG)
+
+
+![webpage (2)](https://user-images.githubusercontent.com/82734765/133910840-e966b6e3-517b-4c80-8f0e-4a6facef6133.JPG)
+
 
 ## Tests
 

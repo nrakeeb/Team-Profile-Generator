@@ -25,7 +25,9 @@ You will then be prompted with a series of questions. Once you have added all yo
 
 ## Video tutorial
 
-- To be added
+Link to the vido tutorial can be found here:
+
+https://www.youtube.com/watch?v=MQlNCcj2yn0
 
 ## Screenshots
 
@@ -35,4 +37,4 @@ You will then be prompted with a series of questions. Once you have added all yo
 
 Run the following command to run the test suite:
 
-npm test
+npm run test
